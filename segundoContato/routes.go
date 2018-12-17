@@ -4,9 +4,10 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
-func spawnRoutes () *httprouter.Router {
+func spawnRoutes() *httprouter.Router {
 	router := httprouter.New()
-	router.GET("/", handleJson)
+	router.GET("/", handleJSON)
+	router.GET("/buscacep/:cep", handleBuscaCep)
 
 	return router
 }
